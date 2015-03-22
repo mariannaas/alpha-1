@@ -18,8 +18,8 @@ public class FirstTestCase {
         WebDriver driver = new FirefoxDriver(firefoxProfile);
 
         driver.get("http://myshka91.wix.com/testframe2");
-//http://myshka91.wix.com/testframe2
         Assert.assertTrue(driver.getCurrentUrl().contains("testframe2"));
+
 
         driver.quit();
 
