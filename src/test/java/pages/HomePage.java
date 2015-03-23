@@ -5,6 +5,8 @@ package pages;
  */
 public class HomePage extends BasePage {
 
+    private String pageTitle = "";
+
     protected HomePage(String currentPage) {
         super(currentPage);
     }
