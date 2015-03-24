@@ -26,7 +26,7 @@ public enum Browser {
                 return browser;
             }
         }
-        Assert.fail("Browser " + name + " doesn't supported by test framework");
+        Assert.fail("Browser " + name + " doesn't support by test framework");
         return null;
     }
 }

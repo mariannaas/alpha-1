@@ -12,7 +12,6 @@ public class BaseJunitTest {
     @Before
     public void startBrowser(){
         WebDriverFactory.startBrowser();
-
         String base_url = PropertiesLoader.loadProperties("application.properties").getProperty("base.url");
         WebDriverFactory.getDriver().get(base_url);
         //??how we should navigate to main page
