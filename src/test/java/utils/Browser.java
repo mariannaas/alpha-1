@@ -12,7 +12,7 @@ public enum Browser {
 
     private String browserName;
 
-     Browser(String browserName) {
+    Browser(String browserName) {
          this.browserName = browserName;
     }
 

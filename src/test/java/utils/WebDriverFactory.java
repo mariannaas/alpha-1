@@ -1,8 +1,11 @@
 package utils;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -25,9 +28,20 @@ public class WebDriverFactory {
     }
 
 
-    public static void startBrowser(){
-        if (driver==null){
-            driver = new FirefoxDriver();
+    public static void startBrowser(Browser browser){
+        if (driver == null){
+        switch (browser){
+            case FIREFOX:
+                driver = new FirefoxDriver();
+                break;
+            case CHROME:
+                String pathToChromeDriver =
+                        new File("").getAbsolutePath() + File.separator + "driver" + File.separator + "chromedriver" ;
+                System.setProperty("webdriver.chrome.driver", pathToChromeDriver);
+                driver = new ChromeDriver();
+                break;
+            default:break;
+        }
         }
         else {
             throw new IllegalStateException("Driver has already been initialized. Quit it before using this method");
