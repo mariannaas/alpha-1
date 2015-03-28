@@ -1,13 +1,17 @@
 package pages;
 
+
+import org.openqa.selenium.WebDriver;
+
 /**
  * Created by sivashchenko on 3/22/2015.
  */
 public abstract class BasePage {
-    private String currentPage;
+   // ADD MENU PANEL
+   // id="DrpDwnMn20bg"
+
     protected BasePage(String currentPage){
-        this.currentPage = currentPage;
-        init();
+
     }
     public abstract void init();
 }
