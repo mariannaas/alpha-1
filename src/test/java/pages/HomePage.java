@@ -21,19 +21,19 @@ public class HomePage{
     @FindBy(id = "check-out")
     private WebElement checkOutDate;
 
-    @FindBy(className = "//div[@bi='SET_ADULTS']/a[@class='up']")
+    @FindBy(xpath = "//div[@bi='SET_ADULTS']/a[@class='up']")
     private WebElement adultsNumberUpButton;
 
-    @FindBy(className = "//div[@bi='SET_ADULTS']/a[@class='down']")
+    @FindBy(xpath = "//div[@bi='SET_ADULTS']/a[@class='down']")
     private WebElement adultsNumberDownButton;
 
-    @FindBy(className = "//div[@bi='SET_KIDS']/a[@class='up']")
+    @FindBy(xpath = "//div[@bi='SET_KIDS']/a[@class='up']")
     private WebElement kidsNumberUpButton;
 
-    @FindBy(className = "//div[@bi='SET_KIDS']/a[@class='down']")
+    @FindBy(xpath = "//div[@bi='SET_KIDS']/a[@class='down']")
     private WebElement kidsNumberDownButton;
 
-    @FindBy(className = "s-button")
+    @FindBy(xpath = "//*[@id='search-widget']/form/ul/li/button[@class='s-button']")
     private WebElement searchButton;
 
     public void setAdultsNumberDownButton(WebElement adultsNumberDownButton) {
@@ -43,6 +43,17 @@ public class HomePage{
     public RoomsRatesPage clickSearchButton(){
         searchButton.click();
         return new RoomsRatesPage(driver);
+    }
+
+    public  HomePage waitUntilSearchButtonEnabled()  {
+        if (!searchButton.isDisplayed()) {
+            try {
+                driver.wait(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        return this;
     }
 
 }
