@@ -15,7 +15,6 @@ import utils.WebDriverFactory;
 public class BaseTest {
     public  WebDriver driver ;
 
-
     @Before
     public void startBrowser() {
         WebDriverFactory.startBrowser(Browser.FIREFOX);

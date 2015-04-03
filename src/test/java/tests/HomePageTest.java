@@ -19,5 +19,9 @@ public class HomePageTest extends BaseTest {
         homePage = new HomePage(super.driver);
         Assert.assertTrue(homePage.getHeaderScreen().isDisplayed());
     }
+    @Test
+    public void clickSearchButton(){
+
+    }
 
 }
