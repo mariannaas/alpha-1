@@ -9,13 +9,18 @@ import utils.WebDriverFactory;
 /**
  * Created by mariannas on 23.03.15.
  */
-public class HomePage{
-    private WebDriver driver;
+public class HomePage extends BasePage{
+
 
     public HomePage(WebDriver driver) {
-       this.driver = driver;
-       PageFactory.initElements(driver, this);
+       super(driver);
     }
+
+    @Override
+    public void init() {
+
+    }
+
     @FindBy(id = "check-in")
     private WebElement checkInDate;
 
@@ -51,13 +56,13 @@ public class HomePage{
 
     public RoomsRatesPage clickSearchButton(){
         searchButton().click();
-        return new RoomsRatesPage(driver);
+        return new RoomsRatesPage(getDriver());
     }
 
     public  HomePage waitUntilSearchButtonEnabled()  {
         if (!searchButton().isDisplayed()) {
             try {
-                driver.wait(3000);
+                getDriver().wait(3000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

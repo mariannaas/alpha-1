@@ -1,11 +1,13 @@
 package pages;
 
+import org.openqa.selenium.WebDriver;
+
 /**
  * Created by mariannas on 23.03.15.
  */
 public class ActivitiesPage extends BasePage {
-    protected ActivitiesPage(String currentPage) {
-        super(currentPage);
+    public ActivitiesPage(WebDriver driver) {
+        super(driver);
     }
 
     @Override

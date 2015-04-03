@@ -6,13 +6,15 @@ import org.openqa.selenium.support.PageFactory;
 /**
  * Created by mariannas on 23.03.15.
  */
-public class RoomsRatesPage  {
-
-    private WebDriver driver;
+public class RoomsRatesPage  extends BasePage{
 
     public RoomsRatesPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+       super(driver);
+    }
+
+    @Override
+    public void init() {
+
     }
 
 

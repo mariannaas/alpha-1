@@ -18,7 +18,6 @@ public class HomePageTest extends BaseTest {
     public void checkHeaderIsDisplayed()  {
         homePage = new HomePage(super.driver);
         Assert.assertTrue(homePage.getHeaderScreen().isDisplayed());
-
     }
 
 }
