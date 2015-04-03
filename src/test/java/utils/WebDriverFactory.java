@@ -46,6 +46,7 @@ public class WebDriverFactory {
         else {
             throw new IllegalStateException("Driver has already been initialized. Quit it before using this method");
         }
+
     }
 
 

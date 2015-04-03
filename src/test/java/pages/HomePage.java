@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utils.WebDriverFactory;
 
 /**
  * Created by mariannas on 23.03.15.
@@ -33,20 +34,28 @@ public class HomePage{
     @FindBy(xpath = "//div[@bi='SET_KIDS']/a[@class='down']")
     private WebElement kidsNumberDownButton;
 
-    @FindBy(xpath = "//*[@id='search-widget']/form/ul/li/button[@class='s-button']")
+    @FindBy(xpath= "//button[@class='s-button']")
     private WebElement searchButton;
+
+    @FindBy(xpath = "//*[@id='search-widget']")
+    private WebElement searchWidget;
+
+    @FindBy(id = "SITE_HEADERscreenWidthBackground")
+    private WebElement headerScreen;
+
+    public WebElement searchButton(){return searchButton;}
 
     public void setAdultsNumberDownButton(WebElement adultsNumberDownButton) {
         this.adultsNumberDownButton = adultsNumberDownButton;
     }
 
     public RoomsRatesPage clickSearchButton(){
-        searchButton.click();
+        searchButton().click();
         return new RoomsRatesPage(driver);
     }
 
     public  HomePage waitUntilSearchButtonEnabled()  {
-        if (!searchButton.isDisplayed()) {
+        if (!searchButton().isDisplayed()) {
             try {
                 driver.wait(3000);
             } catch (InterruptedException e) {
@@ -55,5 +64,11 @@ public class HomePage{
         }
         return this;
     }
+
+    public WebElement getHeaderScreen(){
+        return headerScreen;
+    }
+
+
 
 }

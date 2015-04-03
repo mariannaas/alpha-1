@@ -1,5 +1,6 @@
 package tests;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -11,12 +12,12 @@ import utils.WebDriverFactory;
  */
 public class HomePageTest extends BaseTest {
 
-    HomePage homePage = new HomePage(super.driver);
+    HomePage homePage;
 
     @Test
-    public void clickSearchButtonTest()  {
-       // driver.wait(); //The search button is not found by
-        homePage.clickSearchButton();
+    public void checkHeaderIsDisplayed()  {
+        homePage = new HomePage(super.driver);
+        Assert.assertTrue(homePage.getHeaderScreen().isDisplayed());
 
     }
 
