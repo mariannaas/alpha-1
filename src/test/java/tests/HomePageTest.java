@@ -2,9 +2,11 @@ package tests;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.rules.MethodRule;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.HomePage;
+import utils.ScreenshotOnFailureRule;
 import utils.WebDriverFactory;
 
 /**
@@ -13,6 +15,7 @@ import utils.WebDriverFactory;
 public class HomePageTest extends BaseTest {
 
     HomePage homePage;
+    MethodRule takeScreenshotRule = new ScreenshotOnFailureRule();
 
     @Test
     public void checkHeaderIsDisplayed()  {
